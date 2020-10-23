@@ -6,9 +6,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   quickstart
+   Quickstart
    installation
-   generating results
+   Generating results
 
 
 Indices and tables
