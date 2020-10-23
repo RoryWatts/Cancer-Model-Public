@@ -1,5 +1,0 @@
-Generating results
-==================
-
-The worksheets
-^^^^^^^^^^^^^^
