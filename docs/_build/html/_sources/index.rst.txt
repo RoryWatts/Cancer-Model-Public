@@ -7,12 +7,11 @@ Contents:
    :maxdepth: 2
 
    overview
+   glossary
 
 
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* :ref:`glossary`
 
