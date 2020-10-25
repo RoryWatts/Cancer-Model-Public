@@ -5,6 +5,15 @@ Glossary
 
 .. glossary::
 
+   workbook
+      The excel file which holds the model, and the data for the model.
+
+   worksheets
+      The individual tabs within the workbook which hold data, perform calculations, or show the output of calculations.
+
+   model
+      The series of calculations which take inputs and assumptions and produce output
+
    builder
       A class (inheriting from :class:`~sphinx.builders.Builder`) that takes
       parsed documents and performs an action on them.  Normally, builders

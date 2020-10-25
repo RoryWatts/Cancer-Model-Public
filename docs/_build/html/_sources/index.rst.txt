@@ -8,10 +8,3 @@ Contents:
 
    overview
    glossary
-
-
-Indices and tables
-==================
-
-* :ref:`glossary`
-
