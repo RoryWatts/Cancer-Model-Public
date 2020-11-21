@@ -53,6 +53,107 @@ Let's try it out. Navigate to 'impact - reference' again. We saw that 2,318 peop
 The COVID inputs
 ^^^^^^^^^^^^^^^^
 
+The final set of inputs relate to COVID-19. Navigate to 'impact - covid'. 
+
+At the top of the worksheet, we have an 'on-date' and an 'off-date', which refer to the date COVID-19 cases were first detected in the country, and the date 1 year from then. These dates can be changed by inputting a valid date into the orange cells to the left.
+
+For example, if you think COVID-19 might last longer than 19/03/2021, you could input 19/03/2022 into the orange cell B3. 
+
+What follows is a variety of ways in which COVID-19 could impact cancer services, and people with cancer. These are broken down into modules, and these modules are described below.
+
+Delivery Reduction
+******************
+
+Affects:
+	Coverage rates
+
+Explanation:
+	COVID-19 interrupts the delivery of cancer services, which reduces the coverage rate of cancer packages.
+
+What the value represents:
+	The percentage of treatment reduced from the previous year. If this cell = 100%, this means that delivery was kept at the same level as the previous year. 
+
+To turn off this module:
+	Enter a cell value of 0 into the corresponding orange cell.
+
+
+Abandonment
+***********
+
+Affects:
+	Coverage rates
+
+Explanation:
+	During a year in which COVID-19 is active, a proportion of persons with cancer will abandon treatment, reducing the coverage rate.
+
+What the value represents:
+	The percentage of persons who abandon treatment.
+
+To turn off this module:
+	Enter a cell value of 0 into the corresponding orange cell.
+
+Coverage of optimal treatment
+*****************************
+
+Affects:
+	Transition rates
+
+Explanation:
+	Due to resource constraints, the optimal set of cancer treatments may not be available to people with cancer. Therefore, some treatments may be substituted, and these substitutions will have an inferior effectiveness to the optimal treatment.
+
+What the values represent:
+	"coverage of optimal treatment (%)" refers to how available the optimal treatment is, where 100% means that no treatment was substituted. 
+
+	"relative effectiveness of suboptimal (%)" is best explained using an example. Let's consider Stage I breast cancer, where uncovered persons have a 14% transition rate, and the optimal treatment reduces this transition rate to 1.1%. If every covered person received the sub-optimal treatment, and this is only 50% as effective as the optimal treatment, this will shift the transition rate to 7.3%, as this is 50% of the way from 1.1% to 14% (the uncovered transition rate).
+
+	
+To turn off this module:
+	Either set "coverage of optimal treatment (%)" to 100% in the corresponding orange cell. 
+
+	Or set "relative effectiveness of suboptimal (%)" to 100% in the corresponding orange cell.
+
+
+deaths due to COVID-19
+**********************
+
+Affects:
+	Transition rates
+
+Explanation:
+	People with COVID-19 and cancer have a higher likelihood of dying compared with people who have cancer but do not have COVID-19. 
+
+What the values represent:
+	"% of cohort" refers to what proportion of the persons with cancer also have COVID-19. 
+
+	"Relative Risk" refers to the increased risk they have of dying, relative to just having cancer. 
+
+To turn off this module:
+	Either set "% of cohort" to 0 in the corresponding orange cell. 
+	Or set "Relative Risk" to 1 in the corresponding orange cell.
+
+
+Delays in diagnosis
+*******************
+
+Affects:
+	Transition rates
+
+Explanation:
+	When people delay diagnosis, their cancer progresses. This increases their likelihood of a bad outcome.
+
+What the values represent:
+	"days" is the median number of days that patients are delayed in diagnosis
+
+	"X" is the x-coordinate which maps the "days" to function relating days to change in risk of death.
+
+	"RR" is the relative risk from this delay in diagnosis compared with the regular time to diagnosis.
+
+	"coverage" refers to what percentage of the cohort have a median delay in diagnosis.
+
+To turn off this module:
+	Turn "coverage" to 0 in the corresponding orange cell.
+
+
 The model operations
 --------------------
 

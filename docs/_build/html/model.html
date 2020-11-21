@@ -93,7 +93,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#the-model-input">The model input</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-the-reference-and-intervention-scenarios-differ">How the reference and intervention scenarios differ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#what-are-the-orange-cells">What are the orange cells?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-covid-inputs">The COVID inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-covid-inputs">The COVID inputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#delivery-reduction">Delivery Reduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abandonment">Abandonment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#coverage-of-optimal-treatment">Coverage of optimal treatment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deaths-due-to-covid-19">deaths due to COVID-19</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delays-in-diagnosis">Delays in diagnosis</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#the-model-operations">The model operations</a></li>
@@ -206,6 +213,82 @@ If we look back to row 3, we can see these that this equates to 70 people in Sta
 </div>
 <div class="section" id="the-covid-inputs">
 <h3>The COVID inputs<a class="headerlink" href="#the-covid-inputs" title="Permalink to this headline">¶</a></h3>
+<p>The final set of inputs relate to COVID-19. Navigate to ‘impact - covid’.</p>
+<p>At the top of the worksheet, we have an ‘on-date’ and an ‘off-date’, which refer to the date COVID-19 cases were first detected in the country, and the date 1 year from then. These dates can be changed by inputting a valid date into the orange cells to the left.</p>
+<p>For example, if you think COVID-19 might last longer than 19/03/2021, you could input 19/03/2022 into the orange cell B3.</p>
+<p>What follows is a variety of ways in which COVID-19 could impact cancer services, and people with cancer. These are broken down into modules, and these modules are described below.</p>
+<div class="section" id="delivery-reduction">
+<h4>Delivery Reduction<a class="headerlink" href="#delivery-reduction" title="Permalink to this headline">¶</a></h4>
+<dl class="simple">
+<dt>Affects:</dt><dd><p>Coverage rates</p>
+</dd>
+<dt>Explanation:</dt><dd><p>COVID-19 interrupts the delivery of cancer services, which reduces the coverage rate of cancer packages.</p>
+</dd>
+<dt>What the value represents:</dt><dd><p>The percentage of treatment reduced from the previous year. If this cell = 100%, this means that delivery was kept at the same level as the previous year.</p>
+</dd>
+<dt>To turn off this module:</dt><dd><p>Enter a cell value of 0 into the corresponding orange cell.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="abandonment">
+<h4>Abandonment<a class="headerlink" href="#abandonment" title="Permalink to this headline">¶</a></h4>
+<dl class="simple">
+<dt>Affects:</dt><dd><p>Coverage rates</p>
+</dd>
+<dt>Explanation:</dt><dd><p>During a year in which COVID-19 is active, a proportion of persons with cancer will abandon treatment, reducing the coverage rate.</p>
+</dd>
+<dt>What the value represents:</dt><dd><p>The percentage of persons who abandon treatment.</p>
+</dd>
+<dt>To turn off this module:</dt><dd><p>Enter a cell value of 0 into the corresponding orange cell.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="coverage-of-optimal-treatment">
+<h4>Coverage of optimal treatment<a class="headerlink" href="#coverage-of-optimal-treatment" title="Permalink to this headline">¶</a></h4>
+<dl>
+<dt>Affects:</dt><dd><p>Transition rates</p>
+</dd>
+<dt>Explanation:</dt><dd><p>Due to resource constraints, the optimal set of cancer treatments may not be available to people with cancer. Therefore, some treatments may be substituted, and these substitutions will have an inferior effectiveness to the optimal treatment.</p>
+</dd>
+<dt>What the values represent:</dt><dd><p>“coverage of optimal treatment (%)” refers to how available the optimal treatment is, where 100% means that no treatment was substituted.</p>
+<p>“relative effectiveness of suboptimal (%)” is best explained using an example. Let’s consider Stage I breast cancer, where uncovered persons have a 14% transition rate, and the optimal treatment reduces this transition rate to 1.1%. If every covered person received the sub-optimal treatment, and this is only 50% as effective as the optimal treatment, this will shift the transition rate to 7.3%, as this is 50% of the way from 1.1% to 14% (the uncovered transition rate).</p>
+</dd>
+<dt>To turn off this module:</dt><dd><p>Either set “coverage of optimal treatment (%)” to 100% in the corresponding orange cell.</p>
+<p>Or set “relative effectiveness of suboptimal (%)” to 100% in the corresponding orange cell.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="deaths-due-to-covid-19">
+<h4>deaths due to COVID-19<a class="headerlink" href="#deaths-due-to-covid-19" title="Permalink to this headline">¶</a></h4>
+<dl>
+<dt>Affects:</dt><dd><p>Transition rates</p>
+</dd>
+<dt>Explanation:</dt><dd><p>People with COVID-19 and cancer have a higher likelihood of dying compared with people who have cancer but do not have COVID-19.</p>
+</dd>
+<dt>What the values represent:</dt><dd><p>“% of cohort” refers to what proportion of the persons with cancer also have COVID-19.</p>
+<p>“Relative Risk” refers to the increased risk they have of dying, relative to just having cancer.</p>
+</dd>
+<dt>To turn off this module:</dt><dd><p>Either set “% of cohort” to 0 in the corresponding orange cell.
+Or set “Relative Risk” to 1 in the corresponding orange cell.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="delays-in-diagnosis">
+<h4>Delays in diagnosis<a class="headerlink" href="#delays-in-diagnosis" title="Permalink to this headline">¶</a></h4>
+<dl>
+<dt>Affects:</dt><dd><p>Transition rates</p>
+</dd>
+<dt>Explanation:</dt><dd><p>When people delay diagnosis, their cancer progresses. This increases their likelihood of a bad outcome.</p>
+</dd>
+<dt>What the values represent:</dt><dd><p>“days” is the median number of days that patients are delayed in diagnosis</p>
+<p>“X” is the x-coordinate which maps the “days” to function relating days to change in risk of death.</p>
+<p>“RR” is the relative risk from this delay in diagnosis compared with the regular time to diagnosis.</p>
+<p>“coverage” refers to what percentage of the cohort have a median delay in diagnosis.</p>
+</dd>
+<dt>To turn off this module:</dt><dd><p>Turn “coverage” to 0 in the corresponding orange cell.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 <div class="section" id="the-model-operations">
