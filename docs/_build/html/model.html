@@ -192,7 +192,7 @@
 <p>To explain the model input, we will use the example of Breast Cancer and the country of Uganda.
 (To select Uganda, select it from the dropdown menu at the top of worksheet ‘profile - population’).</p>
 <p>Next, navigate to the worksheet ‘impact - reference’.</p>
-<p>In row 3, we can see the yearly incidence for breast cancer in Uganda: 2,318 <a class="footnote-reference brackets" href="#id5" id="id1">1</a> females in 2019.
+<p>In row 3, we can see the yearly incidence for breast cancer in Uganda: 2,318[#]_ females in 2019.
 In row 19, we see that of these people, 3% are diagnosed with Stage I breast cancer, 19% with Stage II, 52% with Stage III and 26% with Stage IV breast cancer.
 If we look back to row 3, we can see these that this equates to 70 people in Stage I, 440 people in Stage II and so on.</p>
 <p>The transition rate (the probability of dying each year) is shown in row 35 for breast cancer. We can see that there are two blocks, one for those who are ‘uncovered’ and one for those who are ‘covered’. Covered and uncovered are referring to being covered or not covered by cancer treatments, such as surgery and chemotherapy. If you are covered, you have a higher chance of surviving (a lower transition rate). Similarly, if you are at an early stage of cancer, you have a higher chance of living (a lower transition rate).</p>
@@ -302,7 +302,7 @@ Or set “Relative Risk” to 1 in the corresponding orange cell.</p>
 <h3>Structure of the calculation board<a class="headerlink" href="#structure-of-the-calculation-board" title="Permalink to this headline">¶</a></h3>
 <p>Rows 1 - 3 have important non-changeable information about the calculations below.</p>
 <ul class="simple">
-<li><p>row 1 shows which cohort is being considered. This can be altered by moving the slider titled “Cohort” <a class="footnote-reference brackets" href="#id5" id="id2">1</a></p></li>
+<li><p>row 1 shows which cohort is being considered. This can be altered by moving the slider titled “Cohort”<a class="footnote-reference brackets" href="#id2" id="id1">1</a></p></li>
 <li><p>row 2 shows the current year that the calculations apply to. This can be altered by moving the slider titled “Year”</p></li>
 <li><p>row 3 shows whether COVID is active during the current year</p></li>
 </ul>
@@ -311,13 +311,13 @@ Or set “Relative Risk” to 1 in the corresponding orange cell.</p>
 <dl class="simple">
 <dt>mortality:</dt><dd><p>Mortality is simply the amount of people who died, which is calculated by multiplying the incidence by the transition rate.</p>
 </dd>
-<dt>lives saved:</dt><dd><p>Lives saved compares the difference between the intervention scenario, and the reference scenario <a class="footnote-reference brackets" href="#id6" id="id3">2</a></p>
+<dt>lives saved:</dt><dd><p>Lives saved compares the difference between the intervention scenario, and the reference scenario[#]_</p>
 </dd>
 <dt>survived:</dt><dd><p>The incidence minus the number of people who died</p>
 </dd>
 <dt>healthy years:</dt><dd><p>The amount of people who survived during the year multiplied by the disability weight of living with that cancer (or having recovered from cancer)</p>
 </dd>
-<dt>HY gained:</dt><dd><p>The difference between healthy years in each group <a class="footnote-reference brackets" href="#id7" id="id4">3</a></p>
+<dt>HY gained:</dt><dd><p>The difference between healthy years in each group[#]_</p>
 </dd>
 <dt>costs:</dt><dd><p>The cost of running the cancer packages</p>
 </dd>
@@ -331,16 +331,16 @@ Or set “Relative Risk” to 1 in the corresponding orange cell.</p>
 <div class="section" id="the-model-output">
 <h2>The model output<a class="headerlink" href="#the-model-output" title="Permalink to this headline">¶</a></h2>
 <dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>These numbers may differ between model versions.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dt class="label" id="id3"><span class="brackets">2</span></dt>
 <dd><p>What do we mean when we are talking about cohorts? This model looks at 11 years worth of people with cancer, with the first being diagnosed in cancer in 2019, and the last being diagnosed in 2030. This means that we follow the 2019 cohort for all 11 years, the 2020 cohort for ten years, and so on, until the 2030 cohort, which we only observe for one year.</p>
 </dd>
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dt class="label" id="id4"><span class="brackets">3</span></dt>
 <dd><p>It might seem unintuitive that some lives saved numbers are negative. This would imply that the intervention scenario was less effective than the reference scenario? However, it is important to remember that there will be different amounts of people in each stage and year, therefore, the total difference is what is important.</p>
 </dd>
-<dt class="label" id="id8"><span class="brackets">4</span></dt>
+<dt class="label" id="id5"><span class="brackets">4</span></dt>
 <dd><p>For healthy years gained, the values may not make sense when comparing a single year, if the amount of people recovered are not being considered. Therefore it is only advisable to consider the amount of health years gained at the end of the model runs, in the final output.</p>
 </dd>
 </dl>
