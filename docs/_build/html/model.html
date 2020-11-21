@@ -92,6 +92,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How the model works</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-model-input">The model input</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-the-reference-and-intervention-scenarios-differ">How the reference and intervention scenarios differ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-are-the-orange-cells">What are the orange cells?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-covid-inputs">The COVID inputs</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#the-model-operations">The model operations</a></li>
@@ -168,32 +170,42 @@
   <div class="section" id="how-the-model-works">
 <h1>How the model works<a class="headerlink" href="#how-the-model-works" title="Permalink to this headline">¶</a></h1>
 <p>This page will provide a high-level understanding about what the model does, and how it works.</p>
-<p>Firstly, we can think about a model as something which:
-- Takes input
-- Performs operations
-- Produces output</p>
+<p>Firstly, we can think about a model as something which:</p>
+<ul class="simple">
+<li><p>Takes input</p></li>
+<li><p>Performs operations</p></li>
+<li><p>Produces output</p></li>
+</ul>
 <p>We will talk about these three components in depth below.</p>
 <div class="section" id="the-model-input">
 <h2>The model input<a class="headerlink" href="#the-model-input" title="Permalink to this headline">¶</a></h2>
 <p>To explain the model input, we will use the example of Breast Cancer and the country of Uganda.
 (To select Uganda, select it from the dropdown menu at the top of worksheet ‘profile - population’).</p>
 <p>Next, navigate to the worksheet ‘impact - reference’.</p>
-<p>In row 3, we can see the yearly incidence for breast cancer in Uganda: 2318[*]_ females in 2019.
+<p>In row 3, we can see the yearly incidence for breast cancer in Uganda: 2,318 <a class="footnote-reference brackets" href="#id2" id="id1">1</a> females in 2019.
 In row 19, we see that of these people, 3% are diagnosed with Stage I breast cancer, 19% with Stage II, 52% with Stage III and 26% with Stage IV breast cancer.
 If we look back to row 3, we can see these that this equates to 70 people in Stage I, 440 people in Stage II and so on.</p>
 <p>The transition rate (the probability of dying each year) is shown in row 35 for breast cancer. We can see that there are two blocks, one for those who are ‘uncovered’ and one for those who are ‘covered’. Covered and uncovered are referring to being covered or not covered by cancer treatments, such as surgery and chemotherapy. If you are covered, you have a higher chance of surviving (a lower transition rate). Similarly, if you are at an early stage of cancer, you have a higher chance of living (a lower transition rate).</p>
 <p>If you navigate to the worksheet ‘impact - intervention’, you’ll see that all this information is the same. There is incidence, distributions and transition rates, all in the same area. So what is the difference between the two groups?</p>
 <div class="section" id="how-the-reference-and-intervention-scenarios-differ">
 <h3>How the reference and intervention scenarios differ<a class="headerlink" href="#how-the-reference-and-intervention-scenarios-differ" title="Permalink to this headline">¶</a></h3>
-<p>Simply:
-- The reference scenario assumes the current “package” and current “coverage” from 2019 to 2030
-- The intervention scenario assumes an improved “package” and a scaled up “coverage” from 2019 to 2030</p>
-<p>Navigate to the worksheet ‘impact - introduction’</p>
-<dl class="footnote brackets">
-<dt class="label" id="id1"><span class="brackets">*</span></dt>
-<dd><p>These numbers may differ between model versions.</p>
-</dd>
-</dl>
+<p>Simply put:</p>
+<ul class="simple">
+<li><p>The reference scenario assumes the current “package” and current “coverage” from 2019 to 2030</p></li>
+<li><p>The intervention scenario assumes an improved “package” and a scaled up “coverage” from 2019 to 2030</p></li>
+</ul>
+<p>Navigate to the worksheet ‘impact - introduction’ and we can get a sense of what the terms ‘package’ and ‘coverage’ mean.</p>
+<p>In row 5, we can what the current package is for Breast Cancer. Column C shows us that it is ‘package 1’. The package is the package of interventions and treatments available to cancer patients who are covered. If you want, try changing this number to 2 or 3, and then inspect the transition rates on the ‘impact - intervention’ worksheet</p>
+<p>In row 22, we can see what the coverage rate is. We can see that in 2019 (column E), only 3% of people with breast cancer will be covered by cancer services. In 2025 (column K), this rate increases to 47% and by 2030 (column P) this rate has increased to 90%.</p>
+</div>
+<div class="section" id="what-are-the-orange-cells">
+<h3>What are the orange cells?<a class="headerlink" href="#what-are-the-orange-cells" title="Permalink to this headline">¶</a></h3>
+<p>You may have noticed cells which are coloured orange. What are these?</p>
+<p>These orange cells correspond to the grey cells to the right. If you would like to edit the values that you see (e.g. the incidence, distribution, transition rate etc.) then you can input values into the orange cells and the values will change.</p>
+<p>Let’s try it out. Navigate to ‘impact - reference’ again. We saw that 2,318 people had breast cancer. What if you thought this number should actually be 2,600? Simply input 2600 into cell C3, and you’ll notice that number is now shown in cell E3 too. Similarly, all the subsequent calculations will be processed, so we now have 78 people with stage I breast cancer, 494 with stage II and so on.</p>
+</div>
+<div class="section" id="the-covid-inputs">
+<h3>The COVID inputs<a class="headerlink" href="#the-covid-inputs" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="the-model-operations">
@@ -201,6 +213,11 @@ If we look back to row 3, we can see these that this equates to 70 people in Sta
 </div>
 <div class="section" id="the-model-output">
 <h2>The model output<a class="headerlink" href="#the-model-output" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>These numbers may differ between model versions.</p>
+</dd>
+</dl>
 </div>
 </div>
 
