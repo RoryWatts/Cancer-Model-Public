@@ -19,7 +19,7 @@ To explain the model input, we will use the example of Breast Cancer and the cou
 
 Next, navigate to the worksheet 'impact - reference'.
 
-In row 3, we can see the yearly incidence for breast cancer in Uganda: 2,318[#]_ females in 2019. 
+In row 3, we can see the yearly incidence for breast cancer in Uganda: 2,318 [#]_ females in 2019. 
 In row 19, we see that of these people, 3% are diagnosed with Stage I breast cancer, 19% with Stage II, 52% with Stage III and 26% with Stage IV breast cancer.
 If we look back to row 3, we can see these that this equates to 70 people in Stage I, 440 people in Stage II and so on.
 
@@ -166,7 +166,7 @@ Structure of the calculation board
 
 Rows 1 - 3 have important non-changeable information about the calculations below. 
 
-- row 1 shows which cohort is being considered. This can be altered by moving the slider titled "Cohort"[#]_
+- row 1 shows which cohort is being considered. This can be altered by moving the slider titled "Cohort" [#]_
 
 - row 2 shows the current year that the calculations apply to. This can be altered by moving the slider titled "Year"
 
@@ -179,13 +179,13 @@ From here, the calculations take place. We will discuss each calculation separat
 mortality:
 	Mortality is simply the amount of people who died, which is calculated by multiplying the incidence by the transition rate.
 lives saved:
-	Lives saved compares the difference between the intervention scenario, and the reference scenario[#]_
+	Lives saved compares the difference between the intervention scenario, and the reference scenario [#]_
 survived:
 	The incidence minus the number of people who died
 healthy years:
 	The amount of people who survived during the year multiplied by the disability weight of living with that cancer (or having recovered from cancer)
 HY gained:
-	The difference between healthy years in each group[#]_
+	The difference between healthy years in each group [#]_
 costs:
 	The cost of running the cancer packages
 cost diff:
