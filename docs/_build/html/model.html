@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How the model works &mdash; Cancer COVID-19 Modelling Project Beta 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Macro Files" href="macro.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Cancer COVID-19 Modelling Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                b0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How the model works</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-model-input">The model input</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-the-reference-and-intervention-scenarios-differ">How the reference and intervention scenarios differ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-model-operations">The model operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-model-output">The model output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="macro.html">The Macro Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Cancer COVID-19 Modelling Project</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>How the model works</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-the-model-works">
+<h1>How the model works<a class="headerlink" href="#how-the-model-works" title="Permalink to this headline">¶</a></h1>
+<p>This page will provide a high-level understanding about what the model does, and how it works.</p>
+<p>Firstly, we can think about a model as something which:
+- Takes input
+- Performs operations
+- Produces output</p>
+<p>We will talk about these three components in depth below.</p>
+<div class="section" id="the-model-input">
+<h2>The model input<a class="headerlink" href="#the-model-input" title="Permalink to this headline">¶</a></h2>
+<p>To explain the model input, we will use the example of Breast Cancer and the country of Uganda.
+(To select Uganda, select it from the dropdown menu at the top of worksheet ‘profile - population’).</p>
+<p>Next, navigate to the worksheet ‘impact - reference’.</p>
+<p>In row 3, we can see the yearly incidence for breast cancer in Uganda: 2318[*]_ females in 2019.
+In row 19, we see that of these people, 3% are diagnosed with Stage I breast cancer, 19% with Stage II, 52% with Stage III and 26% with Stage IV breast cancer.
+If we look back to row 3, we can see these that this equates to 70 people in Stage I, 440 people in Stage II and so on.</p>
+<p>The transition rate (the probability of dying each year) is shown in row 35 for breast cancer. We can see that there are two blocks, one for those who are ‘uncovered’ and one for those who are ‘covered’. Covered and uncovered are referring to being covered or not covered by cancer treatments, such as surgery and chemotherapy. If you are covered, you have a higher chance of surviving (a lower transition rate). Similarly, if you are at an early stage of cancer, you have a higher chance of living (a lower transition rate).</p>
+<p>If you navigate to the worksheet ‘impact - intervention’, you’ll see that all this information is the same. There is incidence, distributions and transition rates, all in the same area. So what is the difference between the two groups?</p>
+<div class="section" id="how-the-reference-and-intervention-scenarios-differ">
+<h3>How the reference and intervention scenarios differ<a class="headerlink" href="#how-the-reference-and-intervention-scenarios-differ" title="Permalink to this headline">¶</a></h3>
+<p>Simply:
+- The reference scenario assumes the current “package” and current “coverage” from 2019 to 2030
+- The intervention scenario assumes an improved “package” and a scaled up “coverage” from 2019 to 2030</p>
+<p>Navigate to the worksheet ‘impact - introduction’</p>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">*</span></dt>
+<dd><p>These numbers may differ between model versions.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="the-model-operations">
+<h2>The model operations<a class="headerlink" href="#the-model-operations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="the-model-output">
+<h2>The model output<a class="headerlink" href="#the-model-output" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="macro.html" class="btn btn-neutral float-right" title="The Macro Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2014, Read the Docs
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

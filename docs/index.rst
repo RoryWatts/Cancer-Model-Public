@@ -8,5 +8,6 @@ Contents:
 
    quickstart
    overview
+   model
    macro
    glossary

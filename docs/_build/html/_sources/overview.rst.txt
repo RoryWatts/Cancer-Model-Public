@@ -22,7 +22,6 @@ The 'profile -' worksheets present data relevant to the burden of cancer in the 
 
 It is important to note that this data is for *reference only*. That is, this data does not affect the model, nor does it get updated by the output of the model. 
 
-
 impact - 
 ~~~~~~~~
 
