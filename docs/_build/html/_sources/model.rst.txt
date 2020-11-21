@@ -157,9 +157,47 @@ To turn off this module:
 The model operations
 --------------------
 
+The model performs various operations to turn the input into the output. We have already seen some of these operations in the COVID module, which inputs various values (e.g. delivery reduction %) and uses these values to adjust the coverage rates over time. 
+
+This section explains the operations which are performed on the worksheet 'impact - calculation board', where the input we have looked at until this point, is converted into output of interest, such as lives saved. 
+
+Structure of the calculation board
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rows 1 - 3 have important non-changeable information about the calculations below. 
+
+- row 1 shows which cohort is being considered. This can be altered by moving the slider titled "Cohort" [#]_
+
+- row 2 shows the current year that the calculations apply to. This can be altered by moving the slider titled "Year"
+
+- row 3 shows whether COVID is active during the current year
+
+Below rows 1 - 3, the calculation board then follows a similar structure to the 'impact - reference' and 'impact - intervention' worksheets we have looked at previously. In fact, the the calculation board displays these values side by side, with the cells in green (on the left hand side) being the reference scenario, and the cells in blue (on the right hand side) being the intervention scenario. You can see the total incidence for breast cancer in row 23, the distribution rates in row 40, the incidence by stage in row 58, and the transition rates in row 76.
+
+From here, the calculations take place. We will discuss each calculation separately. 
+
+mortality:
+	Mortality is simply the amount of people who died, which is calculated by multiplying the incidence by the transition rate.
+lives saved:
+	Lives saved compares the difference between the intervention scenario, and the reference scenario [#]_
+survived:
+	The incidence minus the number of people who died
+healthy years:
+	The amount of people who survived during the year multiplied by the disability weight of living with that cancer (or having recovered from cancer)
+HY gained:
+	The difference between healthy years in each group [#]_
+costs:
+	The cost of running the cancer packages
+cost diff:
+	The difference in running the cancer packages in the two scenarios. Higher costs mean that the scaled up cancer packages cost more. 
+volumes:
+	This no longers exists in the calculation board.
 
 
 The model output
 ----------------
 
-.. [1] These numbers may differ between model versions.
+.. [#] These numbers may differ between model versions.
+.. [#] What do we mean when we are talking about cohorts? This model looks at 11 years worth of people with cancer, with the first being diagnosed in cancer in 2019, and the last being diagnosed in 2030. This means that we follow the 2019 cohort for all 11 years, the 2020 cohort for ten years, and so on, until the 2030 cohort, which we only observe for one year. 
+.. [#] It might seem unintuitive that some lives saved numbers are negative. This would imply that the intervention scenario was less effective than the reference scenario? However, it is important to remember that there will be different amounts of people in each stage and year, therefore, the total difference is what is important.
+.. [#] For healthy years gained, the values may not make sense when comparing a single year, if the amount of people recovered are not being considered. Therefore it is only advisable to consider the amount of health years gained at the end of the model runs, in the final output.
